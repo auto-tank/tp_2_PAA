@@ -1,10 +1,10 @@
-# TP II - Problema da Mochila (Knapsack Problem)
+# TP II - Problema da Mochila
 
 *Trabalho desenvolvido para a disciplina de Projeto e Análise de Algoritmos - TP II.*
 
 ### Alunos: Italo Henrique Soares dos Santos, Lucas de Souza Bueno, Mariana Aram Silva e Rodrigo Reis do Valle
 
-Este projeto contém a implementação de diversas soluções para o **Problema da Mochila (0/1)**, conforme proposto no trabalho prático baseado no livro de Carvalho (1992).
+Este projeto contém a implementação de diversas soluções para o **Problema da Mochila (0/1)**, conforme proposto no trabalho prático baseado no livro **Ziviani, N. (2018). Projeto de Algoritmos: com Implementações em Pascal e C – 3ª edição revista e ampliada (3rd ed.). Grupo A.**, Capítulo 9, exerício 7 que referencia **Carvalho (1992)**.
 
 ## Descrição do Problema
 O problema consiste em ajudar um escoteiro-mirim a selecionar quais itens levar em sua mochila para um acampamento. Cada item possui um **peso ($p_i$)** e uma **utilidade ($u_i$)**. A mochila possui uma capacidade máxima de carga **$L$**.
@@ -82,7 +82,7 @@ Este projeto utiliza **Poetry** para gerenciamento de dependências (`numpy`, `m
         poetry run python project/d_algoritmo_aproximado.py
         ```
 
-    *   **Análise Comparativa (Item g):**
+    *   **Análise Comparativa (Item e,f, g):**
         ```bash
         poetry run python project/g_analise_comparativa.py
         ```
@@ -99,4 +99,4 @@ Este projeto utiliza **Poetry** para gerenciamento de dependências (`numpy`, `m
 ## Qualidade da Aproximação (Item f)
 O algoritmo guloso (Item d) utiliza a heurística de **densidade** ($d_i = u_i / p_i$).
 *   **Resultados:** Nos testes realizados (`g_analise_comparativa.py`), o algoritmo guloso obteve resultados consistentemente próximos do ótimo (frequentemente acima de 99% em instâncias aleatórias uniformes).
-*   **Limitação:** Existem casos extremos onde o guloso falha significativamente (ex: item pequeno de alta densidade impede item grande de enorme valor), mas na prática "média", comporta-se bem.
+*   **Limitação:** Existem casos extremos onde o guloso falha significativamente (ex: item pequeno de alta densidade impede item grande de enorme valor), mas na prática "média", ele vai bem.
