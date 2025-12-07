@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[brazil]{babel}
+
+\title{Prova de NP-Completude do Problema da Mochila}
+\author{Rodri}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Definição do Problema (Carvalho, 1992)}
+
+Um escoteiro-mirim prepara-se para acampar e, nesse momento, em fase final de preparativos, ele vai colocar os embrulhos dentro de sua mochila. Mal ele começa, já nota que deverá deixar alguns itens para trás, pois, como vai caminhar muito, o peso de sua mochila não deverá exceder um limite de $L$ quilos. Para auxiliar no processo de decidir quais itens levar, ele atribui a cada um deles um valor que representa a sua utilidade. O \textbf{problema da mochila} é então o problema de decidir, em decorrência das suas utilidades, quais itens levar de modo a não sobrecarregar a mochila.
+
+Enunciando este problema em termos mais formais: é dado um conjunto $C_n$ de $n$ itens, representado por $C_n = \{1, 2, \dots, n\}$, em que cada item $i \in C_n$ tem um peso $p_i$ e utilidade $u_i$ ($p_i > 0, u_i > 0$). Desejamos determinar um subconjunto $S$ dos itens, tal que a soma dos pesos dos elementos de $S$ seja menor ou igual à capacidade da mochila $L$ e que a utilidade total dos elementos de $S$ seja a maior possível.
+
+Matematicamente:
+$$ \text{máximo} \sum_{i \in S} u_i $$
+$$ \text{sujeito a} \sum_{i \in S} p_i \le L, \quad S \subseteq C_n $$
+
+\section{Prova de NP-Completude}
+
+Para provar que o problema de otimização acima é $\mathcal{NP}$-Difícil (e que sua versão de decisão correspondente é $\mathcal{NP}$-Completa), formulamos primeiramente a versão de decisão do problema.
+
+\subsection{Versão de Decisão}
+\textbf{Entrada:} Um conjunto de itens $C_n$, onde cada item $i$ tem peso $p_i$ e utilidade $u_i$, uma capacidade $L$ e um valor alvo de utilidade $K$.
+
+\textbf{Questão:} Existe um subconjunto $S \subseteq C_n$ tal que:
+$$ \sum_{i \in S} p_i \le L \quad \text{e} \quad \sum_{i \in S} u_i \ge K $$
+
+\subsection{Pertencimento a NP}
+O problema pertence à classe $\mathcal{NP}$, pois dado um subconjunto candidato $S$ (certificado), podemos verificar em tempo polinomial $O(n)$ se a soma dos pesos é $\le L$ e se a soma das utilidades é $\ge K$.
+
+\subsection{Redução do Problema da Partição}
+Faremos a redução a partir do \textbf{Problema da Partição}, que é conhecido ser $\mathcal{NP}$-Completo.
+
+\textbf{Instância do Problema da Partição:} Dado um conjunto finito $A = \{a_1, a_2, \dots, a_n\}$ de inteiros positivos. A questão é: existe um subconjunto $A' \subseteq A$ tal que $\sum_{a \in A'} a = \sum_{a \in A \setminus A'} a$?
+Seja $S_{total} = \sum_{a \in A} a$. O problema equivale a encontrar $A'$ tal que a soma seja exatamente $S_{total}/2$.
+
+\textbf{Construção da Instância da Mochila:}
+Dada uma instância qualquer da Partição, construímos uma instância do Problema da Mochila da seguinte forma:
+\begin{enumerate}
+    \item Para cada elemento $a_i \in A$, criamos um item $i \in C_n$.
+    \item Definimos o peso $p_i = a_i$.
+    \item Definimos a utilidade $u_i = a_i$.
+    \item Definimos a capacidade da mochila $L = S_{total}/2$.
+    \item Definimos o alvo de utilidade $K = S_{total}/2$.
+\end{enumerate}
+
+Essa transformação é feita em tempo polinomial.
+
+\textbf{Equivalência:}
+\begin{itemize}
+    \item ($\Rightarrow$) Se a Partição tem solução $A'$, selecionamos os itens correspondentes em $S$.
+    $$ \sum_{i \in S} p_i = \sum_{a \in A'} a = S_{total}/2 \le L $$
+    $$ \sum_{i \in S} u_i = \sum_{a \in A'} a = S_{total}/2 \ge K $$
+    Logo, $S$ é uma solução válida para a Mochila.
+
+    \item ($\Leftarrow$) Se a Mochila tem solução $S$, então:
+    $$ \sum_{i \in S} p_i \le S_{total}/2 \quad \text{e} \quad \sum_{i \in S} u_i \ge S_{total}/2 $$
+    Como construímos $p_i = u_i$, seja $X = \sum_{i \in S} p_i = \sum_{i \in S} u_i$.
+    As desigualdades impõem $X \le S_{total}/2$ e $X \ge S_{total}/2$, logo $X = S_{total}/2$.
+    Portanto, os elementos correspondentes a $S$ somam exatamente $S_{total}/2$, resolvendo a Partição.
+\end{itemize}
+
+\section{Conclusão}
+Como reduzimos um problema $\mathcal{NP}$-Completo (Partição) ao Problema da Mochila em tempo polinomial, concluímos que o Problema da Mochila é $\mathcal{NP}$-Completo (na versão de decisão) e $\mathcal{NP}$-Difícil (na versão de otimização).
+
+\end{document}

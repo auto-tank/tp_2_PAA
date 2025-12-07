@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+.venv
+poetry.lock
+
+# LaTeX generated files
+*.aux
+*.log
+*.out
+*.pdf
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# VS Code
+.vscode/

@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "tp-2-paa"
+version = "0.1.0"
+description = ""
+authors = ["rodri <25470856+drigohhh@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+matplotlib = "^3.10.7"
+numpy = "^2.3.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
