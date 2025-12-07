@@ -39,7 +39,7 @@ Este projeto utiliza **Poetry** para gerenciamento de dependências (`numpy`, `m
 
 1.  **Clonar o repositório:**
     ```bash
-    git clone https://github.com/seu-usuario/tp_2_PAA.git
+    git clone https://github.com/auto-tank/tp_2_PAA
     cd tp_2_PAA
     ```
 
