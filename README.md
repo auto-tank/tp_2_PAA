@@ -18,7 +18,7 @@ Os arquivos estão organizados na pasta `project/`, correspondendo aos itens sol
 
 | Arquivo | Item | Descrição |
 | :--- | :---: | :--- |
-| `a_prova_np_completo.tex` | **(a)** | Prova formal em LaTeX de que o problema é $\mathcal{NP}$-Completo (redução da Partição). |
+| `a_prova_np_completo.tex` | **(a)** | Prova formal em LaTeX de que o problema é $\mathcal{NP}$-Completo (redução da Partição), também presente no relatório. |
 | `b_algoritmo_linear.py` | **(b)** | Algoritmo exato com complexidade de espaço linear $O(L)$. Retorna apenas o valor ótimo. |
 | `b_teste_limites.py` | **(b)** | Script de teste de carga para identificar o maior problema resolvível em tempo hábil (~30s). |
 | `c_prog_dinamica.py` | **(c)** | Solução via Programação Dinâmica Clássica (Matriz $n \times L$) com recuperação dos itens escolhidos. |
@@ -82,7 +82,7 @@ Este projeto utiliza **Poetry** para gerenciamento de dependências (`numpy`, `m
         poetry run python project/d_algoritmo_aproximado.py
         ```
 
-    *   **Análise Comparativa (Item e,f, g):**
+    *   **Análise Comparativa (Item e, f, g):**
         ```bash
         poetry run python project/g_analise_comparativa.py
         ```
