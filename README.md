@@ -23,7 +23,7 @@ Os arquivos estão organizados na pasta `project/`, correspondendo aos itens sol
 | `b_teste_limites.py` | **(b)** | Script de teste de carga para identificar o maior problema resolvível em tempo hábil (~30s). |
 | `c_prog_dinamica.py` | **(c)** | Solução via Programação Dinâmica Clássica (Matriz $n \times L$) com recuperação dos itens escolhidos. |
 | `d_algoritmo_aproximado.py` | **(d)** | Algoritmo Guloso (Aproximado) baseado na densidade de valor ($u_i/p_i$). |
-| `g_analise_comparativa.py` | **(g)** | Script que gera instâncias aleatórias, compara os algoritmos e plota gráficos de desempenho. |
+| `g_analise_comparativa.py` | **(e, f, g)** | Script de análise comparativa: gera dados que fundamentam a análise de complexidade (e) e qualidade (f). |
 
 ## Pré-requisitos
 
@@ -48,45 +48,45 @@ Este projeto utiliza **Poetry** para gerenciamento de dependências (`numpy`, `m
     ```bash
     poetry --version
     ```
-    *Se o comando não for reconhecido, instale seguindo as instruções em: https://python-poetry.org/docs/#installation*
+    Se o comando não for reconhecido, instale seguindo as instruções em: https://python-poetry.org/docs/#installation
 
 3.  **Instalar dependências do projeto:**
     Na raiz do projeto (onde está o arquivo `pyproject.toml`), execute:
     ```bash
     poetry install
     ```
-    *Isso criará um ambiente virtual e instalará todas as bibliotecas necessárias.*
+    Isso criará um ambiente virtual e instalará todas as bibliotecas necessárias.
 
 4.  **Rodar os scripts (Exemplos):**
-    *Para executar os scripts utilizando o ambiente virtual gerenciado pelo Poetry, utilize `poetry run python ...` ou ative o shell com `poetry shell`.*
+    Para executar os scripts utilizando o ambiente virtual gerenciado pelo Poetry, utilize `poetry run python ...` ou ative o shell com `poetry shell`.
 
     *   **Algoritmo Linear (Item b):**
         ```bash
-        python project/b_algoritmo_linear.py
+        poetry run python project/b_algoritmo_linear.py
         ```
-        *Valida com o exemplo do livro (Resultado esperado: 6).*
+        Valida com o exemplo do livro (Resultado esperado: 6).
 
     *   **Teste de Limites (Item b):**
         ```bash
-        python project/b_teste_limites.py
+        poetry run python project/b_teste_limites.py
         ```
 
     *   **Programação Dinâmica Clássica (Item c):**
         ```bash
-        python project/c_prog_dinamica.py
+        poetry run python project/c_prog_dinamica.py
         ```
-        *Exibe a tabela $UT[M][j]$ formatada conforme o livro.*
+        Exibe a tabela $UT[M][j]$ formatada conforme o livro.
 
     *   **Algoritmo Guloso (Item d):**
         ```bash
-        python project/d_algoritmo_aproximado.py
+        poetry run python project/d_algoritmo_aproximado.py
         ```
 
     *   **Análise Comparativa (Item g):**
         ```bash
-        python project/g_analise_comparativa.py
+        poetry run python project/g_analise_comparativa.py
         ```
-        *Gera os gráficos `grafico_tempos.png` e `grafico_qualidade.png`.*
+        Gera os gráficos `grafico_tempos.png` e `grafico_qualidade.png`.
 
 ## Análise de Complexidade (Item e)
 

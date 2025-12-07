@@ -40,7 +40,7 @@ if __name__ == "__main__":
     test_utilidades = [2, 4, 5, 1]
     test_L = 5
     
-    print(f"--- Teste de Validação (Espaço Linear) ---")
+    print("--- Teste de Validação (Espaço Linear) ---")
     print(f"Capacidade (L): {test_L}")
     print(f"Itens (Pesos): {test_pesos}")
     print(f"Itens (Utilidades): {test_utilidades}")
@@ -48,7 +48,7 @@ if __name__ == "__main__":
     resultado = mochila_espaco_linear(test_pesos, test_utilidades, test_L)
     
     print(f"Resultado Obtido: {resultado}")
-    print(f"Resultado Esperado: 6")
+    print("Resultado Esperado: 6")
     
     assert resultado == 6, f"Erro: Esperado 6, obtido {resultado}"
     print("Teste Passou!")
